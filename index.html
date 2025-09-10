@@ -113,10 +113,9 @@
       alert(`Obrigado, ${name || 'amigo'}! Nós enviaremos novidades para ${email}`);
       leadForm.reset();
     });
-
     document.getElementById('demoBtn').addEventListener('click', ()=>{
-      alert('Demo não implementado — substitua por um link ou modal.');
-    });
+  window.location.href = 'https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox'; // Coloque o link desejado aqui
+});
   </script>
 </body>
 </html>
