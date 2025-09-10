@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Produto Exemplo — Landing Page</title>
+  <meta name="description" content="Landing page simples para apresentar um produto ou serviço.">
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#06b6d4;
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,var(--bg),#071026 60%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    .container{max-width:1100px;margin:0 auto;padding:32px}
+
+    header{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700}
+    .brand h1{font-size:18px;margin:0}
+
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px}
+    nav a.cta{background:var(--accent);color:#012;padding:8px 12px;border-radius:8px;font-weight:600}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:48px}
+    .hero h2{font-size:36px;margin:0 0 12px}
+    .hero p{color:var(--muted);margin:0 0 20px}
+    .badges{display:flex;gap:10px;margin-bottom:18px}
+    .badge{background:var(--glass);padding:8px 12px;border-radius:999px;font-size:13px;color:var(--muted)}
+
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:20px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+
+    form input, form button{width:100%;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit}
+    form .actions{display:flex;gap:10px}
+    form button{background:var(--accent);border:none;color:#012;font-weight:700;cursor:pointer}
+    form small{display:block;color:var(--muted);margin-top:8px}
+
+    /* Features */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:48px 0}
+    .feature{padding:18px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.03)}
+    .feature h3{margin:0 0 8px;font-size:16px}
+    .feature p{color:var(--muted);margin:0}
+
+    footer{margin:48px 0 16px;color:var(--muted);font-size:14px;text-align:center}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .features{grid-template-columns:1fr 1fr}
+      nav a{display:none}
+    }
+    @media (max-width:560px){
+      .features{grid-template-columns:1fr}
+      .logo{width:40px;height:40px}
+      .hero h2{font-size:28px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">PX</div>
+        <div>
+          <h1>ProdutoEx</h1>
+          <div style="font-size:12px;color:var(--muted)">Solução simples para começar</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#features">Recursos</a>
+        <a href="#pricing">Preços</a>
+        <a href="#contato" class="cta">Entrar em contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <div class="badges">
+            <span class="badge">Lançamento</span>
+            <span class="badge">Teste grátis 14 dias</span>
+          </div>
+
+          <h2>Construa, valide e lance seu produto com rapidez</h2>
+          <p>Landing page exemplo para apresentar um produto, coletar e-mails e converter visitantes em leads. Código limpo, responsivo e fácil de adaptar.</p>
+
+          <div class="card" style="max-width:680px">
+            <h3 style="margin-top:0">Receba novidades</h3>
+            <form id="leadForm">
+              <label for="name" style="font-size:13px;color:var(--muted)">Nome</label>
+              <input id="name" type="text" placeholder="Seu nome" required />
+              <label for="email" style="font-size:13px;color:var(--muted);margin-top:10px">E-mail</label>
+              <input id="email" type="email" placeholder="seu@exemplo.com" required />
+
+              <div class="actions" style="margin-top:12px">
+                <button type="submit">Quero acessar</button>
+                <button type="button" id="demoBtn">Ver demo</button>
+              </div>
+
+              <small>Sem spam. Cancele a qualquer momento.</small>
+            </form>
+          </div>
+        </div>
+
+        <aside>
+          <div class="card" style="text-align:center;">
+            <h3 style="margin:0 0 8px">Visão geral</h3>
+            <p style="color:var(--muted)">Painel rápido, integração com APIs e templates prontos. Ideal para MVPs.</p>
+            <div style="margin-top:18px">
+              <strong style="font-size:20px;display:block">R$0</strong>
+              <span style="color:var(--muted);font-size:13px">Plano gratuito disponível</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="features" class="features">
+        <div class="feature card">
+          <h3>Fácil de usar</h3>
+          <p>Design intuitivo e componentes prontos para economizar tempo de desenvolvimento.</p>
+        </div>
+        <div class="feature card">
+          <h3>Seguro</h3>
+          <p>Boas práticas de segurança e proteção de dados desde o início.</p>
+        </div>
+        <div class="feature card">
+          <h3>Escalável</h3>
+          <p>Arquitetura pensada para crescer conforme seus usuários aumentam.</p>
+        </div>
+      </section>
+
+      <section id="contato">
+        <div class="card" style="padding:20px;margin-top:12px">
+          <h3>Quer conversar?</h3>
+          <p style="color:var(--muted)">Envie uma mensagem e responderemos em até 24 horas úteis.</p>
+          <form style="margin-top:12px">
+            <input placeholder="Seu e-mail" required />
+            <input placeholder="Mensagem" style="margin-top:8px" />
+            <div style="margin-top:8px"><button type="submit">Enviar</button></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="ano"></span> ProdutoEx — Todos os direitos reservados.
+    </footer>
+  </div>
+
+  <script>
+    // pequeno JS para comportamento do formulário (exemplo)
+    document.getElementById('ano').textContent = new Date().getFullYear();
+
+    const leadForm = document.getElementById('leadForm');
+    leadForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      if(!email) return alert('Preencha o e-mail.');
+      // No mundo real aqui você enviaria para seu servidor
+      alert(`Obrigado, ${name || 'amigo'}! Nós enviaremos novidades para ${email}`);
+      leadForm.reset();
+    });
+
+    document.getElementById('demoBtn').addEventListener('click', ()=>{
+      alert('Demo não implementado — substitua por um link ou modal.');
+    });
+  </script>
+</body>
+</html>
